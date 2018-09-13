@@ -10,17 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Servlet_01
+ * Servlet implementation class Servlet01
  */
-@WebServlet("/Servlet_01")
-public class Servlet_01 extends HttpServlet {
+@WebServlet("/Servlet01")
+public class Servlet01 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
-    public Servlet_01() {
-        super();
+    public Servlet01() {
         // TODO Auto-generated constructor stub
     }
 
