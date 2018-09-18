@@ -8,12 +8,14 @@
 </head>
 <body>
 <%
+
 //Connection conn = null;
 try {
 // Laut MySQL-Web-Seiten ist zusaetzlicher Aufruf von
 // newInstance() wegen moeglicher Probleme in
 // manchen Java-Varianten anzuraten.
 Class.forName("com.mysql.jdbc.Driver").newInstance();
+jdbc:mysql://localhost/restaurant?user=root&password=root;
 out.println("<b>MySQL-Treiber wurde geladen!</b>");
 }
 catch(ClassNotFoundException e) {

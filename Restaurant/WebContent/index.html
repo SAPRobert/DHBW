@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-	
-  <title>Restaurant "Zum Hirsch"</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="/style/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
+
+<title>Restaurant "Zum Hirsch"</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/Restaurant/css/style.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/Restaurant/js/jQuery.js"></script>
+
+
 </head>
-	
+
 <body>
 	<div>
-		<h1 class="header">Restaurant "Zum Hirsch"</h1>
+		<h1 class="header">Willkommen im Restaurant "Zum Hirsch"</h1>
 	</div>
 	<div class="row">
-		<div class="column column-left col-md-2">
-		  	Spalte für Kategorien
+		<div class="column column-left col-md-3">
+			<h3 class="heading">Wählen Sie eine Kategorie</h3>
+			<div class="list-group Kat">
+					<a href="#" class="list-group-item kategorie">Gesamtes Angebot</a>
+					<a href="#" class="list-group-item kategorie" id="Vorspeise">Vorspeise</a> 
+				 	<a href="#" class="list-group-item kategorie" id="Hauptspeisen">Hauptspeisen</a>
+					<a href="#" class="list-group-item kategorie" id="Nachspeisen">Nachspeisen</a>
+					<a href="#" class="list-group-item kategorie" id="Getränke">Getränke</a>
+					<!-- <span class="glyphicon glyphicon-chevron-right"></span>-->
+			</div>
 		</div>
-	  	<div class="column column-middle col-md-4">
-			Spalte für Gerichte
+		<div class="column column-middle col-md-4">
+			<h3 class="heading">Wählen Sie hier Ihr Gericht aus</h3>
+			<div class="container">
+				<div class=" col-md-5">
+					<input class="form-control" id="myInput" type="text" placeholder="Search.."> <br>
+					<ul class="list-group" id="myList">
+						<li class="list-group-item Vorspeise">
+							<span>Tomatensuppe</span>
+							<span class="preis">5.00€</span>
+						</li>
+						<li class="list-group-item Vorspeise">Spargelcremesuppe</li>
+						<li class="list-group-item Vorspeise">Scheibe Brot</li>
+						<li class="list-group-item Hauptspeisen">Thüringer Bratwurst mit Brötchen</li>
+						<li class="list-group-item Hauptspeisen">Ente mit Klößen und Rotkohl</li>
+						<li class="list-group-item Hauptspeisen">Rostbrätel mit Kartoffelsalat</li>
+						<li class="list-group-item Nachspeisen">Eisbecher "Pumuckel"</li>
+						<li class="list-group-item Getränke">Wasser still</li>
+						<li class="list-group-item Getränke">Wasser sprudel</li>
+						<li class="list-group-item Getränke">Cola</li>
+						<li class="list-group-item Getränke">Cafe</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-	  	<div class="column column-right col-md-6">
-			Spalte für Detailansicht
+		<div class="column column-right col-md-4">
+			<h3 class="heading">Details</h3>
 		</div>
 	</div>
 </body>
-	
+
 </html>
 
