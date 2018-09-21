@@ -2,18 +2,9 @@
 <html>
 <head >
 <style>
-table {
-    width: 100%;
-    border-collapse: collapse;
-    top:0px;
+img{
+width: 100%;
 }
-
-table, td, th {
-    border: 1px solid black;
-    padding: 5px;
-}
-
-th {text-align: left;}
 </style>
 </head>
 
@@ -36,12 +27,15 @@ mysqli_select_db($con,"restaurant");
 $sql="SELECT * FROM produkte WHERE prod_id = '".$q."'";
 $result = mysqli_query($con,$sql);
 
-echo "<ul>";
+
 while ($row = mysqli_fetch_array($result)) {
-    echo "<li>" . $row['prod_name'] . "<span>".$row['prod_preis']."</span>" ."</li>";
-    //echo $zeile['prod_name'] . "<br>";
+    $bild=$row['prod_bild'];
+    echo    "<li>" . "<img src=$bild >" . "<br>" .
+            $row['prod_name'] . "<br>" .
+            $row['prod_details'] . "<br>" .
+            "<span>" . "Preis: " . $row['prod_preis'] . " €" . "</span>" ."</li>";
 }
-echo "</ul>";
+
 
 mysqli_close($con);
 ?>

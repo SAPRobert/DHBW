@@ -52,10 +52,8 @@ body {
 	right: 10px;
 }
 
-.produkte {
-	background-color: rgb(255, 212, 127);
-	font-size: 30px;
-	margin-top: 15px;
-	border-radius: 8px;
-	list-style-type:none;
+.btn-success{
+	position: absolute;
+	right: 10px;
+	bottom:10px;
 }
