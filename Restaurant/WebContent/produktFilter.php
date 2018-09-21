@@ -10,6 +10,10 @@ background-color: rgb(255, 212, 127);
 	border-radius: 8px;
 	list-style-type:none;
 	}
+li:hover{
+background-color: rgb(0, 212, 127);
+}
+
 span{
 position: absolute;
 	right: 20px;
@@ -40,12 +44,15 @@ else{
 $sql="SELECT * FROM produkte WHERE prod_kat = '".$q."'";
 }
 $result = mysqli_query($con,$sql);
+$func="showOneProduct(this.id)";
 
-echo "<ul>";
+
 while ($row = mysqli_fetch_array($result)) {
-    echo "<li>" . $row['prod_name'] . "<span>".$row['prod_preis']."</span>" ."</li>";
+    $id=$row['prod_id'];
+    
+    echo "<li id=$id onclick=$func >" .  $row['prod_name'] . "<span>" . $row['prod_preis'] . "</span>" . "</li>" ;
 }
-echo "</ul>";
+
 
 mysqli_close($con);
 ?>
