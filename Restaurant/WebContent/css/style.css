@@ -1,47 +1,61 @@
-body{
+body {
 	width: 100vw;
 	overflow: hidden;
-	background-color: rgba(249,173,43,1);
+	background-color: rgba(249, 173, 43, 1);
 }
-.header{
+
+.header {
 	text-align: center;
 }
-.column-left{
+
+.column-left {
 	border: 1px solid grey;
 	height: 80vh;
 	border-radius: 30px;
 	margin-left: 30px;
 }
 
-.heading{
+.heading {
 	text-align: center;
 }
-.kategorie{
-	background-color:rgb(255, 212, 127);
-	font-size:30px;
-	margin-top:15px;
-	border-radius:8px;
+
+.kategorie {
+	background-color: rgb(255, 212, 127);
+	font-size: 30px;
+	margin-top: 15px;
+	border-radius: 8px;
 }
+
 .glyphicon {
-    position: absolute;
-    top: 15px;
-    right: 10px;
-}
-.column-middle{
-	border: 1px solid grey;
-	height: 80vh;
-	border-radius: 30px;
-	margin-left: 30px;
-	background-color: 
-	
-}
-.column-right{
-	border: 1px solid grey;
-	border-radius: 30px;
-	height: 80vh;
-	margin-left: 30px;
-}
-.preis{
 	position: absolute;
-    right: 10px;
+	top: 15px;
+	right: 10px;
+}
+
+.column-middle {
+	border: 1px solid grey;
+	height: 80vh;
+	border-radius: 30px;
+	margin-left: 30px;
+	background-color:
+}
+
+.column-right {
+	border: 1px solid grey;
+	border-radius: 30px;
+	height: 80vh;
+	margin-left: 30px;
+}
+
+.preis {
+	position: absolute;
+	right: 10px;
+}
+
+.produkte {
+	background-color: rgb(255, 212, 127);
+	font-size: 30px;
+	margin-top: 15px;
+	border-radius: 8px;
+	list-style-type:none;
 }
