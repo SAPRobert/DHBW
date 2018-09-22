@@ -1,6 +1,9 @@
 $(document).ready(function() {
 		showProducts("Alles");
+		showTable();
 	});
+
+
 
 function showProducts(str) {
 	    if (str == "") {
