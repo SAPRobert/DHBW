@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head >
+<meta charset="utf-8">
+
 <style>
 img{
 width: 100%;
@@ -30,10 +32,13 @@ $result = mysqli_query($con,$sql);
 
 while ($row = mysqli_fetch_array($result)) {
     $bild=$row['prod_bild'];
-    echo    "<li>" . "<img src=$bild >" . "<br>" .
+    $id=$row['prod_id'];
+    echo    "<li id=$id >" .
+            "<img src=$bild >" . "<br>" .
             $row['prod_name'] . "<br>" .
             $row['prod_details'] . "<br>" .
-            "<span>" . "Preis: " . $row['prod_preis'] . " €" . "</span>" ."</li>";
+            "<span>" . "Preis: " . $row['prod_preis'] . " €" . "</span>" . 
+            "</li>";
 }
 
 

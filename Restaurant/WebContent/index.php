@@ -1,3 +1,9 @@
+<?php
+$cookie_name = "tisch";
+$cookie_value = $_POST["tischnummer"];
+setcookie($cookie_name, $cookie_value, time() + (86400 * 1), "/"); // 86400 = 1 day
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -44,6 +50,7 @@
 			<h3 class="heading">Details</h3>
 			<div class="" id="details"></div>
 			<div>
+			<input id="ione" type="text" value="1">
 			<button type="button" class="btn btn-success">Zur Bestellung hinzufügen</button>
 			</div>
 		</div>
