@@ -15,12 +15,12 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 1), "/"); // 86400 = 1 
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/Restaurant/css/style.css">
+<link rel="stylesheet" type="text/css" href="/dhbw/Restaurant/webcontent/css/style.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/Restaurant/js/jQuery.js"></script>
+<script src="/dhbw/Restaurant/webcontent/js/jQuery.js"></script>
 
 
 </head>
