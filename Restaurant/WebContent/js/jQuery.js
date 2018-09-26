@@ -1,10 +1,10 @@
 $(document).ready(function() {
 		showProducts("Alles");
-		showTable();
+		
 	});
 
 
-
+//Anzeigen der produktFilter.php in der index.php in Spalte "Produkte"
 function showProducts(str) {
 	    if (str == "") {
 	        document.getElementById("produkte").innerHTML = "";
@@ -27,9 +27,11 @@ function showProducts(str) {
 	    }
 	};
 	
+	
+//Anzeigen der details.php in der index.php in Spalte "Details"
 function showOneProduct(str) {
 	    if (str == "") {
-	        document.getElementById("produkte").innerHTML = "";
+	        document.getElementById("details").innerHTML = "";
 	        return;
 	    } else { 
 	        if (window.XMLHttpRequest) {
@@ -48,85 +50,43 @@ function showOneProduct(str) {
 	        xmlhttp.send();
 	    }
 	};
-
 	
-
-
-	/*
-$(document).ready(function() {
+function addToBasket(){
+	detailElement = $("#anzeige").children();
+	detailElementId = detailElement.attr('id');
+	detailElementMenge = $("#ione").val();
+	var detail=[detailElementId, detailElementMenge];
 	
+	   if (detailElementId == "") {
+	        document.getElementById("testfenster").innerHTML = "";
+	        return;
+	    } else { 
+	        if (window.XMLHttpRequest) {
+	            // code for IE7+, Firefox, Chrome, Opera, Safari
+	            xmlhttp = new XMLHttpRequest();
+	        } else {
+	            // code for IE6, IE5
+	            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	        }
+	        xmlhttp.onreadystatechange = function() {
+	            if (this.readyState == 4 && this.status == 200) {
+	                document.getElementById("testfenster").innerHTML = this.responseText;
+	            }
+	        };
+	        xmlhttp.open("GET","addBestellung.php?q="+detail,true);
+	        xmlhttp.send();
+	        showOneProduct(detailElementId);
+	   }
+	   
+	//alert(detailElementId + "mal" + detailElementMenge);
+};
 
+function deleteBasket(){
+	xmlhttp.open("GET","deleteBestellung.php?q="+detail,true);
+    xmlhttp.send();
 	
-	  var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-	      document.getElementById("ajax").innerHTML =
-	      this.responseText;
-	    }
-	  };
-	  xhttp.open("Post", "allprod.php", true);
-	  xhttp.send();
-	  
-	  $("#Alles").click(function() {  
-		  xhttp.open("GET", "allprod.php", true);
-		  xhttp.send();
-		});
-	  
-	  $("#Vorspeise").click(function() {  
-		  xhttp.open("GET", "vor.php", true);
-		  xhttp.send();
-		});
+};
 
-	$("#Hauptspeise").click(function() {
-		  xhttp.open("GET", "haupt.php", true);
-		  xhttp.send();
-		});
 
-	$("#Nachspeise").click(function() { 
-		  xhttp.open("GET", "nach.php", true);
-		  xhttp.send();
-		});
 
-	$("#Getränke").click(function() { 
-		  xhttp.open("GET", "getr.php", true);
-		  xhttp.send();
-		});
-	    */
-	  
-	/*$("#myInput").click("keyup", function() {
-		var value = $(this).val().toLowerCase();
-		$("#myList li").filter(function() {
-			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-		});
-	});
 
-	$(".kategorie").click(function() {
-		var value = $(this).text();
-		if(value!="Gesamtes Angebot"){
-			$("#myList li").filter(function() {
-				$(this).toggle($(this).hasClass(value))
-			});
-		}
-		else{
-			$("#myList li").filter(function() {
-				$(this).toggle($(this).hasClass("list-group-item"))
-			});
-		}	
-	});
-	
-	
-		
-			  var xhttp = new XMLHttpRequest();
-			  xhttp.onreadystatechange = function() {
-			    if (this.readyState == 4 && this.status == 200) {
-			      document.getElementById("ajax").innerHTML =
-			      this.responseText;
-			    }
-			  };
-			  xhttp.open("GET", "WebContent/testcon.php", true);
-			  xhttp.send();
-			
-	
-	
-});
-*/

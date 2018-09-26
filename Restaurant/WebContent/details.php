@@ -7,6 +7,9 @@
 img{
 width: 100%;
 }
+li{
+font-size:20px;
+}
 </style>
 </head>
 
@@ -33,12 +36,15 @@ $result = mysqli_query($con,$sql);
 while ($row = mysqli_fetch_array($result)) {
     $bild=$row['prod_bild'];
     $id=$row['prod_id'];
-    echo    "<li id=$id >" .
+    $divid="anzeige";
+    echo    "<div id=$divid>".
+            "<li id=$id >" .
             "<img src=$bild >" . "<br>" .
             $row['prod_name'] . "<br>" .
             $row['prod_details'] . "<br>" .
             "<span>" . "Preis: " . $row['prod_preis'] . " €" . "</span>" . 
-            "</li>";
+            "</li>".
+            "</div>";
 }
 
 
