@@ -1,6 +1,6 @@
 body {
 	width: 100vw;
-	overflow: hidden;
+	overflow: hidden; 
 	background-color: rgba(249, 173, 43, 1);
 }
 
@@ -43,7 +43,7 @@ body {
 .column-right {
 	border: 1px solid grey;
 	border-radius: 30px;
-	height: 80vh;
+	height: 95vh;
 	margin-left: 30px;
 }
 
@@ -62,4 +62,7 @@ body {
 	right: 60px;
 	bottom:10px;
 	height:33px;
+}
+.column{
+	height:85vh;
 }

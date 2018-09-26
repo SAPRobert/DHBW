@@ -15,12 +15,12 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 1), "/"); // 86400 = 1 
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/Restaurant/css/style.css">
+<link rel="stylesheet" type="text/css" href="/dhbw//Restaurant/WebContent/css/style.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/Restaurant/js/jQuery.js"></script>
+<script src="/dhbw/Restaurant/WebContent/js/jQuery.js"></script>
 
 
 </head>
@@ -51,9 +51,13 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 1), "/"); // 86400 = 1 
 			<div class="" id="details"></div>
 			<div>
 			<input id="ione" type="text" value="1">
-			<button type="button" class="btn btn-success">Zur Bestellung hinzufügen</button>
+			<button onclick="addToBasket()" type="button" class="btn btn-success">Zur Bestellung hinzufügen</button>
 			</div>
 		</div>
+	</div>
+	<button onclick="deleteBasket()" type="button" class="btn btn-success">Warenkorb löschen</button>
+	<a onclick="viewBasket()" href="warenkorb.html" title="Warenkorb anzeigen">Warenkorb anzeigen</a>
+	<div id="testfenster">
 	</div>
 </body>
 

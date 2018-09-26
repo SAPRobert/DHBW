@@ -28,6 +28,7 @@ $servername = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'restaurant';
+
 $q = strval($_GET['q']);
 
 $con = mysqli_connect($servername, $username, $password, $dbname);
@@ -37,6 +38,9 @@ if (!$con) {
 
 mysqli_select_db($con,"restaurant");
 
+
+
+
 if($q=="Alles"){
     $sql="SELECT * FROM produkte";
 }
@@ -44,13 +48,19 @@ else{
 $sql="SELECT * FROM produkte WHERE prod_kat = '".$q."'";
 }
 $result = mysqli_query($con,$sql);
+
 $func="showOneProduct(this.id)";
 
 
 while ($row = mysqli_fetch_array($result)) {
     $id=$row['prod_id'];
     
-    echo "<li id=$id onclick=$func >" .  $row['prod_name'] . "<span>" . $row['prod_preis'] . "</span>" . "</li>" ;
+    echo   "<li id=$id onclick=$func >" .
+           $row['prod_name'] .
+           "<span>" .
+           $row['prod_preis'] .
+           "</span>" .
+           "</li>" ;
 }
 
 
