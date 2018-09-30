@@ -73,19 +73,16 @@ function addToBasket(){
 	                document.getElementById("testfenster").innerHTML = this.responseText;
 	            }
 	        };
-	        xmlhttp.open("GET","addBestellung.php?q="+detail,true);
+	        xmlhttp.open("GET","addProductToB.php?q="+detail,true);
 	        xmlhttp.send();
-	        showOneProduct(detailElementId);
+	        //showOneProduct(detailElementId);
 	   }
 	   
 	//alert(detailElementId + "mal" + detailElementMenge);
 };
 
-function deleteBasket(){
-	xmlhttp.open("GET","deleteBestellung.php?q="+detail,true);
-    xmlhttp.send();
-	
-};
+
+
 
 
 

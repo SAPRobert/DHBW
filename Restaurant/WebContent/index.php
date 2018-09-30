@@ -55,7 +55,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 1), "/"); // 86400 = 1 
 			</div>
 		</div>
 	</div>
-	<button onclick="deleteBasket()" type="button" class="btn btn-success">Warenkorb löschen</button>
+	
 	<a onclick="viewBasket()" href="warenkorb.html" title="Warenkorb anzeigen">Warenkorb anzeigen</a>
 	<div id="testfenster">
 	</div>
