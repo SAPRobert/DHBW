@@ -58,7 +58,7 @@ while ($row = mysqli_fetch_array($result)) {
     echo   "<li id=$id onclick=$func >" .
            $row['prod_name'] .
            "<span>" .
-           $row['prod_preis'] .
+           $row['prod_preis'] . " €" .
            "</span>" .
            "</li>" ;
 }
