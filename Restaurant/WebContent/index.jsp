@@ -4,52 +4,37 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Hallo Welt</title>
+<link rel="stylesheet" type="text/css" href="/dhbw/Restaurant/webcontent/css/style.css">
+<title>Bestellungen</title>
 </head>
 <body>
 <html>
 <body>
 
-<%@ page import = "java.sql.*" isThreadSafe="false" %>
+<%@ page import="java.sql.*" isThreadSafe="false" %>
 
 <%
-  String sDbDrv = "com.mysql.jdbc.Driver";
-  String sDbUrl = "jdbc:mysql://localhost/phpmyadmin/sql.php?db=restaurant";
-  String sUsr   = "";
-  String sPwd   = "";
-  String sTable = "bestellungen";
-  String sSql   = "";
-  if( request.getParameterNames().hasMoreElements() == true )
+  String sDbDrv = request.getParameter( "prmDbDrv" );
+  String sDbUrl = request.getParameter( "prmDbUrl" );
+  String sUsr   = request.getParameter( "prmUsr" );
+  String sPwd   = request.getParameter( "prmPwd" );
+  String sTable = request.getParameter( "prmTab" );
+  String sSql   = request.getParameter( "prmSql" );
+
+  if( null != sTable && 0 <  sTable.length() &&
+     (null == sSql   || 0 == sSql.length())  )
+    sSql = "SELECT * FROM " + sTable;
+
+  if( null == sDbDrv || 0 >= sDbDrv.length() ||
+      null == sDbUrl || 0 >= sDbUrl.length() )
   {
-    sDbDrv = request.getParameter( "prmDbDrv" );
-    sDbUrl = request.getParameter( "prmDbUrl" );
-    sUsr   = request.getParameter( "prmUsr" );
-    sPwd   = request.getParameter( "prmPwd" );
-    sTable = request.getParameter( "prmTab" );
-    sSql   = request.getParameter( "prmSql" );
-    if( null != sTable && 0 <  sTable.length() &&
-       (null == sSql   || 0 == sSql.length())  )
-      sSql = "SELECT * FROM " + sTable;
+    out.println( "<br>Fehler: Mindestens Db-Treiber und Db-URL "
+               + "sowie Tabellenname "
+               + "müssen ausgefüllt werden!<br>" );
   }
-%>
-
-<form method="post"><pre>
-Db-Treiber   <input type="text"     name="prmDbDrv" value='<%= sDbDrv %>' size=60><br>
-Db-URL       <input type="text"     name="prmDbUrl" value='<%= sDbUrl %>' size=60><br>
-Benutzer     <input type="text"     name="prmUsr"   value='<%= sUsr   %>' size=60><br>
-Kennwort     <input type="password" name="prmPwd"   value='<%= sPwd   %>' size=60><br>
-Tabellenname <input type="text"     name="prmTab"   value='<%= sTable %>' size=60><br>
-SQL-Kommando <input type="text"     name="prmSql"   value='<%= sSql   %>' size=60>
-             (nach Änderung anderer Parameter muss SQL-Kommando gelöscht werden)<br>
-             <input type="submit" name="submit" value="Datenbanktabelle anzeigen">
-</pre></form>
-
-<%
-  if( request.getParameterNames().hasMoreElements() == true
-      && null != sDbDrv && 0 < sDbDrv.length()
-      && null != sDbUrl && 0 < sDbUrl.length()
-      && null != sSql   && 0 < sSql.length() )
+  else
   {
+    out.println( sSql + "<br><br>" );
     Connection cn = null;
     Statement  st = null;
     ResultSet  rs = null;
@@ -77,6 +62,8 @@ SQL-Kommando <input type="text"     name="prmSql"   value='<%= sSql   %>' size=6
     }
   }
 %>
+
+<br><a href="readKitchen.html">Zurück zum Eingabeformular</a>
 
 </body>
 </html>
