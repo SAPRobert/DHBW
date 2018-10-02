@@ -37,6 +37,7 @@ if (!$con) {
 }
 
 mysqli_select_db($con,"restaurant");
+$con->set_charset("utf8");
 
 
 
@@ -58,7 +59,7 @@ while ($row = mysqli_fetch_array($result)) {
     echo   "<li id=$id onclick=$func >" .
            $row['prod_name'] .
            "<span>" .
-           $row['prod_preis'] . " €" .
+           number_format($row['prod_preis'], 2, ',', '.') . "€" .
            "</span>" .
            "</li>" ;
 }
