@@ -68,6 +68,8 @@ class chart
         }
         
         mysqli_select_db($con, "restaurant");
+        $con->set_charset("utf8");
+        
         
         $Array = $_SESSION['chart'];
         // print_r($Array);
@@ -89,12 +91,12 @@ class chart
                 $button = "<button onclick=$func> X </button>";
                 echo "<tr>" . 
                 // "<th>" . $row['prod_id'] ."</th>".
-                "<th>" . $row['prod_name'] . "</th>" . "<th>" . $row['prod_preis'] . " €" . "</th>" . "<th>" . $innerArray[1] . "</th>" . "<th>" . $zwischen . "€ " . "</th>" . "<th>" . $button . "</th>" . "</tr>";
+                "<th>" . $row['prod_name'] . "</th>" . "<th>" . number_format($row['prod_preis'], 2, ',', '.') . "€" . "</th>" . "<th>" . $innerArray[1] . "</th>" . "<th>" . number_format($zwischen, 2, ',', '.') . "€ " . "</th>" . "<th>" . $button . "</th>" . "</tr>";
             }
             ;
         }
         echo "</table>";
-        echo "<br> . <span>" . "Gesamtsumme: " . floatval($endsumme) . " €" . "</span>";
+        echo "<br> . <span>" . "Gesamtsumme: " . number_format($endsumme, 2, ',', '.') . " €" . "</span>";
     }
 
     public function dbConnect()
@@ -111,6 +113,8 @@ class chart
         }
         
         mysqli_select_db($con, "restaurant");
+        $con->set_charset("utf8");
+        
     }
 
     /**
@@ -159,6 +163,8 @@ class chart
         }
         
         mysqli_select_db($con, "restaurant");
+        $con->set_charset("utf8");
+        
         
         $Array1 = $_SESSION['chart'];
         // echo "<br>" . count($_SESSION['chart']);
@@ -188,12 +194,12 @@ class chart
                 $button = "<button onclick=$func> X </button>";
                 echo "<tr>" . 
                 // "<th>" . $row['prod_id'] ."</th>".
-                "<th>" . $row['prod_name'] . "</th>" . "<th>" . $row['prod_preis'] . "</th>" . "<th>" . $innerArray[1] . "</th>" . "<th>" . $zwischen . "</th>" . "<th>" . $button . "</th>" . "</tr>";
+                "<th>" . $row['prod_name'] . "</th>" . "<th>" . number_format($row['prod_preis'], 2, ',', '.') . "</th>" . "<th>" . $innerArray[1] . "</th>" . "<th>" . number_format($zwischen, 2, ',', '.') . "</th>" . "<th>" . $button . "</th>" . "</tr>";
             }
             ;
         }
         echo "</table>";
-        echo "<br> . <span>" . "Gesamtsumme: " . floatval($endsumme) . " €" . "</span>";
+        echo "<br> . <span>" . "Gesamtsumme: " . floatval($endsumme) . "€" . "</span>";
         $_SESSION['chart'] = $Array;
     }
 

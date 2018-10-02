@@ -54,7 +54,10 @@ function deleteProduct(str){
         };
     xmlhttp.open("GET","deleteProduct.php?q="+str,true);
     xmlhttp.send();
+    };
     
-
-//alert(detailElementId + "mal" + detailElementMenge);
+function sendData(str){
+	xmlhttp.open("GET","sendData.php?q="+str,true);
+    xmlhttp.send();
+	
 };

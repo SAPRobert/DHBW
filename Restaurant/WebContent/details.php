@@ -27,6 +27,8 @@ if (!$con) {
 }
 
 mysqli_select_db($con,"restaurant");
+$con->set_charset("utf8");
+
 
 
 $sql="SELECT * FROM produkte WHERE prod_id = '".$q."'";
@@ -42,7 +44,7 @@ while ($row = mysqli_fetch_array($result)) {
             "<img src=$bild >" . "<br>" .
             $row['prod_name'] . "<br>" .
             $row['prod_details'] . "<br>" .
-            "<span>" . "Preis: " . $row['prod_preis'] . " €" . "</span>" . 
+            "<span>" . "Preis: " . number_format($row['prod_preis'], 2, ',', '.') . "€" . "</span>" . 
             "</li>".
             "</div>";
 }
