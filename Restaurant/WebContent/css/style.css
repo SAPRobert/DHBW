@@ -1,61 +1,80 @@
 body {
 	width: 100vw;
 	overflow: hidden; 
-	background-color: rgba(249, 173, 43, 1);
+	background-color: rgb(255, 255, 255);
 }
 
 .header {
 	text-align: center;
 }
-
-.column-left {
-	border: 1px solid grey;
-	height: 80vh;
-	border-radius: 30px;
-	margin-left: 30px;
-}
-
 .heading {
 	text-align: center;
 }
+.column{
+	border: 1px solid grey;
+	height: 85vh;
+	border-radius: 30px;
+	list-style-type:none;
+}
 
+
+
+/*linke Spalte*/
+.column-left {
+	margin-left: 30px;
+}
 .kategorie {
-	background-color: rgb(255, 212, 127);
+	background-color: rgb(173, 210, 235);
 	font-size: 30px;
 	margin-top: 15px;
 	border-radius: 8px;
 }
-
-.glyphicon {
-	position: absolute;
-	top: 15px;
-	right: 10px;
+.kategorie a:hover{
+background-color: rgb(137, 168, 188);
 }
 
+
+
+/*mittlere Spalte*/
 .column-middle {
-	border: 1px solid grey;
-	height: 80vh;
-	border-radius: 30px;
 	margin-left: 30px;
-	background-color:
+}
+.column-middle li{
+background-color: rgb(173, 210, 235);
+	font-size: 30px;
+	margin-top: 15px;
+	border-radius: 8px;
+	
+	}
+.column-middle li:hover{
+background-color: rgb(137, 168, 188);
 }
 
+.column-middle span{
+position: absolute;
+	right: 20px;
+}
+
+
+
+
+/*rechte Spalte*/
 .column-right {
-	border: 1px solid grey;
-	border-radius: 30px;
-	height: 95vh;
 	margin-left: 30px;
+	
 }
-
-.preis {
-	position: absolute;
-	right: 10px;
+.column-right span{
+	position: relative;
+	left:10px;
 }
-
 .btn-success{
+	background-color:rgb(137, 168, 188);
 	position: absolute;
 	right: 10px;
 	bottom:10px;
+}
+.btn-success:hover{
+	background-color:rgb(98, 122, 138);;
 }
 #ione{
 	position: absolute;
@@ -63,17 +82,27 @@ body {
 	bottom:10px;
 	height:33px;
 }
-.column{
-	height:85vh;
+.column-right img{
+width: 100%;
+height:380px;
+object-fit: cover;
+
 }
-/*
-span{
-    font-size: xx-large;
-    left: 13px;
-    font-style: italic;
-    position: absolute;
+.column-right li{
+font-size:24px;
 }
-*/
-th{
-    font-size: xx-large;
+
+
+
+
+/*Warenkorb*/
+#rechnung span {
+	font-size: xx-large;
+	left: 13px;
+	font-style: italic;
+	position: absolute;
+}
+
+th {
+	font-size: xx-large;
 }

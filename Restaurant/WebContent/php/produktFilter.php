@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head >
+<head>
 <meta charset="utf-8">
-
 <style>
-img{
-width: 100%;
-}
-li{
-font-size:20px;
-}
+
 </style>
 </head>
 
 <body>
+
 <?php
 $servername = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'restaurant';
+
 $q = strval($_GET['q']);
 
 $con = mysqli_connect($servername, $username, $password, $dbname);
@@ -31,26 +27,32 @@ $con->set_charset("utf8");
 
 
 
-$sql="SELECT * FROM produkte WHERE prod_id = '".$q."'";
+
+if($q=="Alles"){
+    $sql="SELECT * FROM produkte";
+}
+else{
+$sql="SELECT * FROM produkte WHERE prod_kat = '".$q."'";
+}
 $result = mysqli_query($con,$sql);
+
+$func="showOneProduct(this.id)";
 
 
 while ($row = mysqli_fetch_array($result)) {
-    $bild=$row['prod_bild'];
     $id=$row['prod_id'];
-    $divid="anzeige";
-    echo    "<div id=$divid>".
-            "<li id=$id >" .
-            "<img src=$bild >" . "<br>" .
-            $row['prod_name'] . "<br>" .
-            $row['prod_details'] . "<br>" .
-            "<span>" . "Preis: " . number_format($row['prod_preis'], 2, ',', '.') . "€" . "</span>" . 
-            "</li>".
-            "</div>";
+    
+    echo   "<li id=$id onclick=$func >" .
+           $row['prod_name'] .
+           "<span>" .
+           number_format($row['prod_preis'], 2, ',', '.') . "€" .
+           "</span>" .
+           "</li>" ;
 }
 
 
 mysqli_close($con);
 ?>
+
 </body>
 </html>

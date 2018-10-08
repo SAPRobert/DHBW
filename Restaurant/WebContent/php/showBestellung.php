@@ -3,17 +3,6 @@
 <head>
 <meta charset="utf-8">
 
-<style>
-span{
-    font-size: xx-large;
-    left: 13px;
-    font-style: italic;
-    position: absolute;
-}
-th{
-    font-size: xx-large;
-}
-</style>
 </head>
 
 <body>
