@@ -15,7 +15,11 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/Restaurant/js/Warenkorb.js"></script>
-
+<script>
+function back(){
+	window.history.back();
+}
+</script>
 
 </head>
 <body>
@@ -31,8 +35,16 @@
 	<div class="col-md-2">
 	
 	</div>
-		<button style="left:10px" onclick="deleteBasket()" type="button" class="btn btn-success">
+		<button style="left:10px" onclick="back()" type="button" class="btn btn-success">
+		zurück
+		</button>
+		
+		<button style="left:200px" onclick="deleteBasket()" type="button" class="btn btn-success">
 		Warenkorb löschen
+		</button>
+		
+		<button style="left:500px" onclick="print()" type="button" class="btn btn-success">
+		Rechnung speichern
 		</button>
 		
 		<button id="1" onclick="sendData()" type="button" class="btn btn-success">

@@ -1,8 +1,4 @@
-<?php
-$cookie_name = "tisch";
-$cookie_value = $_POST["tischnummer"];
-setcookie($cookie_name, $cookie_value, time() + (86400 * 1), "/"); // 86400 = 1 day
-?>
+
 
 <!DOCTYPE html>
 <html lang="de">
@@ -30,6 +26,9 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 1), "/"); // 86400 = 1 
 </head>
 
 <body>
+<?php
+include_once 'cookie.php';
+?>
 	<div>
 		<h1 class="header">Willkommen im Restaurant "Zum Hirsch"</h1>
 	</div>
@@ -60,7 +59,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 1), "/"); // 86400 = 1 
 		</div>
 	</div>
 	
-	<a onclick="viewBasket()" href="warenkorb.html" title="Warenkorb anzeigen">Warenkorb anzeigen</a>
+	<a onclick="viewBasket()" href="../html/warenkorb.html" title="Warenkorb anzeigen">Warenkorb anzeigen</a>
 	<div id="testfenster">
 	</div>
 </body>
