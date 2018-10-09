@@ -11,10 +11,7 @@ body {
 	text-align: center;
 }
 .column{
-	border: 1px solid grey;
-	height: 85vh;
-	border-radius: 30px;
-	list-style-type:none;
+	
 }
 
 
@@ -22,6 +19,10 @@ body {
 /*linke Spalte*/
 .column-left {
 	margin-left: 30px;
+	border: 1px solid grey;
+	height: 85vh;
+	border-radius: 30px;
+	list-style-type:none;
 }
 .kategorie {
 	background-color: rgb(173, 210, 235);
@@ -38,6 +39,10 @@ background-color: rgb(137, 168, 188);
 /*mittlere Spalte*/
 .column-middle {
 	margin-left: 30px;
+	border: 1px solid grey;
+	height: 85vh;
+	border-radius: 30px;
+	list-style-type:none;
 }
 .column-middle li{
 background-color: rgb(173, 210, 235);
@@ -61,6 +66,10 @@ position: absolute;
 /*rechte Spalte*/
 .column-right {
 	margin-left: 30px;
+	border: 1px solid grey;
+	height: 85vh;
+	border-radius: 30px;
+	list-style-type:none;
 	
 }
 .column-right span{
@@ -76,6 +85,13 @@ position: absolute;
 .btn-success:hover{
 	background-color:rgb(98, 122, 138);;
 }
+.btn-success:focus{
+	background-color:rgb(137, 168, 188);
+}
+.btn-success:active{
+	background-color:rgb(137, 168, 188);
+}
+
 #ione{
 	position: absolute;
 	right: 60px;
@@ -84,9 +100,8 @@ position: absolute;
 }
 .column-right img{
 width: 100%;
-height:380px;
+height:50vh;
 object-fit: cover;
-
 }
 .column-right li{
 font-size:24px;
@@ -95,7 +110,45 @@ font-size:24px;
 
 
 
-/*Warenkorb*/
+
+
+
+
+#link{
+	left:2vw;
+	top:10px;
+	position: relative;
+}
+
+
+
+
+.notification {
+  /* background-color: #555; */
+  color: white;
+  text-decoration: none;
+  padding: 5px 16px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  /* background: grey; */
+}
+
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+
+
+/*Warenkorb Seite*/
 #rechnung span {
 	font-size: xx-large;
 	left: 13px;

@@ -29,6 +29,7 @@ if ($details[0] != "0" && $details[1] != "0") {
     $chart->insertArtikel($id, $anz);
 }
 ;
+echo $chart->get_chart_count();
 //$chart->undo_chart();
 
 ?>
