@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Restaurant "Zum Hirsch"</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/Restaurant/css/style.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/Restaurant/js/Warenkorb.js"></script>
+<script>
+function back(){
+    window.history.back();
+}
+</script>
+
+</head>
+<body>
+	<div class="col-md-2"></div>
+	<div class="col-md-8" id="">
+		<div class="" id="rechnung"></div>
+		<div>
+		
+		</div>
+	
+		
+	</div>
+	<div class="col-md-2">
+	
+	</div>
+		<button style="left:10px" onclick="back()" type="button" class="btn btn-success">
+		zurück
+		</button>
+		
+		<button style="left:200px" onclick="deleteBasket()" type="button" class="btn btn-success">
+		Warenkorb löschen
+		</button>
+		<a href="../tcpdf/rechnung.php" target="_blank">
+		<button style="left:500px"  type="button" class="btn btn-success">
+		Rechnung speichern
+		</button>
+		</a>
+		<button id="1" onclick="sendData()" type="button" class="btn btn-success">
+		Bestellung bestätigen
+		</button>
+
+</body>
+</html>

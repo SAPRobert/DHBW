@@ -22,7 +22,7 @@ function showBasket(str){
 	                document.getElementById("rechnung").innerHTML = this.responseText;
 	            }
 	        };
-	        xmlhttp.open("GET","showBestellung.php?q="+str,true);
+	        xmlhttp.open("GET","../php/showBestellung.php?q="+str,true);
 	        xmlhttp.send();
 	    }
 	   
@@ -31,7 +31,7 @@ function showBasket(str){
 
 
 function deleteBasket(str){
-	        xmlhttp.open("GET","deleteBestellung.php?q="+str,true);
+	        xmlhttp.open("GET","../php/deleteBestellung.php?q="+str,true);
 	        xmlhttp.send();
 	   
 	   
@@ -52,9 +52,18 @@ function deleteProduct(str){
                 document.getElementById("rechnung").innerHTML = this.responseText;
             }
         };
-    xmlhttp.open("GET","deleteProduct.php?q="+str,true);
+    xmlhttp.open("GET","../php/deleteProduct.php?q="+str,true);
     xmlhttp.send();
+    };
     
-
-//alert(detailElementId + "mal" + detailElementMenge);
+function sendData(str){
+	xmlhttp.open("GET","../php/sendData.php?q="+str,true);
+    xmlhttp.send();
+	
 };
+
+function print(str){
+	xmlhttp.open("GET","../tcpdf/rechnung.php?q="+str,true);
+    xmlhttp.send();
+};
+
