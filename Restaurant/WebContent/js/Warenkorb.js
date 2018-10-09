@@ -63,6 +63,7 @@ function sendData(str){
 };
 
 function print(str){
-	xmlhttp.open("GET","../php/print.php?q="+str,true);
+	xmlhttp.open("GET","../tcpdf/rechnung.php?q="+str,true);
     xmlhttp.send();
-}
+};
+

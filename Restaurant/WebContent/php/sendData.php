@@ -26,11 +26,13 @@ for ($i = 0; $i < count($Array); $i ++) {
             VALUES ($prod_id, $b_anz, $b_tisch)";
     
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        //echo "New record created successfully";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        //echo "Error: " . $sql . "<br>" . $conn->error;
     }
+     
 };
-
+echo "<h1>" . "Vielen Dank für Ihre Bestellung. Bei Fragen wenden Sie sich gerne an unser Servicepersonal" . "</h1>";
+$chart->undo_chart();
 $conn->close();
 ?>
