@@ -35,21 +35,22 @@ function back(){
 	<div class="col-md-2">
 	
 	</div>
-		<button style="left:10px" onclick="back()" type="button" class="btn btn-success">
+	<div>
+		<button id="b_zurück"  onclick="back()" type="button" class="btn btn-success">
 		zurück
 		</button>
 		
-		<button style="left:200px" onclick="deleteBasket()" type="button" class="btn btn-success">
+		<button id="b_delete" onclick="deleteBasket()" type="button" class="btn btn-success">
 		Warenkorb löschen
 		</button>
-		<a href="../tcpdf/rechnung.php" target="_blank">
-		<button style="left:500px"  type="button" class="btn btn-success">
+		<a id="b_rechnung" href="../tcpdf/rechnung.php" target="_blank">
+		<button type="button" class="btn btn-success">
 		Rechnung speichern
 		</button>
 		</a>
-		<button id="1" onclick="sendData()" type="button" class="btn btn-success">
+		<button id="b_bestätigen" onclick="sendData()" type="button" class="btn btn-success">
 		Bestellung bestätigen
 		</button>
-
+	</div>
 </body>
 </html>

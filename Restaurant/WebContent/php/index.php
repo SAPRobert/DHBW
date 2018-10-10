@@ -110,7 +110,7 @@ include_once 'cookie.php';
 					</button>
 					<input id="input1" type="text" value="1">
 					</div>
-					<button onclick="addToBasket()" type="button"
+					<button id="b_add" onclick="addToBasket()" type="button"
 						class="btn btn-success">Zur Bestellung hinzufügen</button>
 				
 			</div>
