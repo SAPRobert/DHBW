@@ -20,6 +20,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bilbo Swash Caps' rel='stylesheet'>
 
 <script src="/dhbw/Restaurant/WebContent/js/jQuery.js"></script>
 <script src="/dhbw/Restaurant/WebContent/js/loader.js"></script>
@@ -37,7 +39,7 @@ include_once 'cookie.php';
 
 
 	<div style="display: none;" id="myDiv" class="animate-bottom">
-		<div class="row">
+		<div id="oben" class="row">
 			<div id="Warenkorb" class="column col-md-2">
 				<a class="notification" id="link" onclick="viewBasket()"
 					href="../html/warenkorb.html" title="Warenkorb anzeigen"> <svg
@@ -75,9 +77,10 @@ include_once 'cookie.php';
 				<h1 class="header">Willkommen im Restaurant "Zum Hirsch"</h1>
 			</div>
 		</div>
+		<div class="container-fluid">
 		<div class="row">
-			<div class="column column-left col-md-3">
-				<h3 class="heading">Wählen Sie eine Kategorie</h3>
+			<div class="column column-left col-md-4">
+				<h2 class="heading"><b>Kategorie</b></h2>
 				<div class="list-group Kat">
 					<a href="#" class="list-group-item kategorie" id="Alles"
 						onclick="showProducts(this.id)">Gesamtes Angebot</a> <a href="#"
@@ -93,30 +96,31 @@ include_once 'cookie.php';
 				</div>
 
 			</div>
-			<div class="column column-middle col-md-4">
-				<h3 class="heading">Wählen Sie hier Ihr Gericht aus</h3>
-				<div class="produkte" id="produkte"></div>
-
+			<div class="column col-md-4">
+				<h2 class="heading"><b>Gericht</b></h2>
+				<div class="column col-md-12 column-middle">
+						<div class="produkte" id="produkte"></div>
+				</div>
 			</div>
 			<div class="column column-right col-md-4">
-				<h3 class="heading">Details</h3>
+				<h2 class="heading"><b>Details</b></h2>
 				<div class="" id="details"></div>
 				<div id="ione">
-					<button type="button" class="btn btn-default btn-sm" onclick="plus()">
+					<button type="button" class="btn btn-default btn-sm btn-pm" onclick="plus()">
 						<span class="glyphicon glyphicon-plus"></span> 
 					</button>
-					<button type="button" class="btn btn-default btn-sm" onclick="minus()">
+					<button type="button" class="btn btn-default btn-sm btn-pm" onclick="minus()">
 						<span class="glyphicon glyphicon-minus"></span> 
 					</button>
 					<input id="input1" type="text" value="1">
 					</div>
-					<button onclick="addToBasket()" type="button"
+					<button id="b_add" onclick="addToBasket()" type="button"
 						class="btn btn-success">Zur Bestellung hinzufügen</button>
 				
 			</div>
 		</div>
 	</div>
-
+</div>
 
 
 
