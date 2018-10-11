@@ -37,17 +37,17 @@ $sql="SELECT * FROM produkte WHERE prod_kat = '".$q."'";
 $result = mysqli_query($con,$sql);
 
 $func="showOneProduct(this.id)";
-
+$class="scroll";
 
 while ($row = mysqli_fetch_array($result)) {
     $id=$row['prod_id'];
     
     echo   "<li id=$id onclick=$func >" .
            $row['prod_name'] .
-           "<span>" .
+           "<span class=$class>" .
            number_format($row['prod_preis'], 2, ',', '.') . "€" .
            "</span>" .
-           "</li>" ;
+           "</li>";
 }
 
 
