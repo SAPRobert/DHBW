@@ -1,53 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="/Restaurant/css/style.css">
-<title>Bestellungen</title>
-</head>
-<body>
-<html>
-<body>
 
 <%@ page import="java.sql.*,java.io.*,java.util.*,beanServ.*" isThreadSafe="false" %>
 
-<%
-    
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  table{
+  border: 1px solid grey;
+  text-align: left;
+  }
+  #big th {
+  width: 300px;
+  }
+  #small th {
+  width: 100px;
+  }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="http://localhost/dhbw/Restaurant/webcontent/css/style.css">
+<title>Bestellungen</title>
+</head>
+
+<body>
+
+<% 
+
+//if(login){
+	
   String sDbDrv = "com.mysql.jdbc.Driver";
   String sDbUrl = "jdbc:mysql://localhost:3306/restaurant?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
   String sUsr   = "root";
   String sPwd   = "";
   String sTable = "bestellungen";
-  String sSql   = "SELECT bestellungen.prod_ID, produkte.prod_name, bestellungen.b_anz, bestellungen.b_tisch, bestellungen.b_time FROM bestellungen LEFT JOIN produkte ON bestellungen.prod_ID=produkte.prod_ID";
-
-  /*if( null == sDbDrv || 0 >= sDbDrv.length() ||
-      null == sDbUrl || 0 >= sDbUrl.length() )
-  {
-    out.println( "<br>Fehler: Mindestens Db-Treiber und Db-URL "
-               + "sowie Tabellenname "
-               + "müssen ausgefüllt werden!<br>" );
-  }*/
+  String sSql   = "SELECT bestellungen.prod_ID, produkte.prod_name, bestellungen.b_anz, bestellungen.b_tisch, bestellungen.b_time FROM bestellungen LEFT JOIN produkte ON bestellungen.prod_ID=produkte.prod_ID WHERE b_time >= DATE_SUB(NOW(),INTERVAL 1 HOUR)";
   
   response.setIntHeader("Refresh",5);
   
-  meinBean.meineFunktion();
-  
-  /* Calendar calendar = new GregorianCalendar();
-  String am_pm;
-  
-  int hour = calendar.get(Calendar.HOUR);
-  int minute = calendar.get(Calendar.MINUTE);
-  int second = calendar.get(Calendar.SECOND);
-  
-  if(calendar.get(Calendar.AM_PM) == 0)
-      am_pm = "AM";
-   else
-      am_pm = "PM";
-      hour = hour + 12;
-   String CT = hour+":"+ minute +":"+ second /*+ am_pm; */
-   //out.println("Crrent Time: " + CT + "\n");
 %>
 
 <br>
@@ -66,14 +56,14 @@
       rs = st.executeQuery( sSql );
       ResultSetMetaData rsmd = rs.getMetaData();
       int n = rsmd.getColumnCount();
-      out.println( "<table border=1 cellspacing=0><tr>" );  
+      out.println( "<table><tr>" );  
       %>
-      <th>Produkt</th>
-	  <th>Anzahl</th>
-	  <th>Tisch</th>
-	  <th>Bestellungseingang</th>
+      <th id="big">Produkt</th>
+	  <th id="small">Anzahl</th>
+	  <th id="small">Tisch</th>
+	  <th id="big">Bestellungseingang</th>
 	  <%
-      /*for( int i=2; i<=n; i++ )
+      /* for( int i=2; i<=n; i++ )
         out.println( "<th>" + rsmd.getColumnName( i ) + "</th>" ); */
       while( rs.next() )
       {
@@ -88,11 +78,15 @@
       try { if( null != cn ) cn.close(); } catch( Exception ex ) {/*ok*/}
     }
   }
+//}
+/*else {
+  out.println("<p>Falsches Passwort</p>");
+}*/
+  out.println( "<p>" + meinBean.meineFunktion() + "</p>"); 
+  
 %>
 
 <br>
 
 </body>
-</html>
-</body>
-</html>
+</html> 
