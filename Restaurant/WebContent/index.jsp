@@ -11,14 +11,10 @@
 <html>
 <body>
 
-<%@ page import="java.sql.*,java.io.*,java.util.*" isThreadSafe="false" %>
-
-<jsp:useBean id = "Date" class = "java.util.Date" />
-<p>Es ist <%= Date %> Uhr.<
+<%@ page import="java.sql.*,java.io.*,java.util.*,beanServ.*" isThreadSafe="false" %>
 
 <%
-  
-  
+    
   String sDbDrv = "com.mysql.jdbc.Driver";
   String sDbUrl = "jdbc:mysql://localhost:3306/restaurant?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
   String sUsr   = "root";
@@ -33,9 +29,12 @@
                + "sowie Tabellenname "
                + "müssen ausgefüllt werden!<br>" );
   }*/
-  /* response.setIntHeader("Refresh",5);
   
-  Calendar calendar = new GregorianCalendar();
+  response.setIntHeader("Refresh",5);
+  
+  meinBean.meineFunktion();
+  
+  /* Calendar calendar = new GregorianCalendar();
   String am_pm;
   
   int hour = calendar.get(Calendar.HOUR);
@@ -47,7 +46,7 @@
    else
       am_pm = "PM";
       hour = hour + 12;
-   String CT = hour+":"+ minute +":"+ second +" "/*+ am_pm*/;
+   String CT = hour+":"+ minute +":"+ second /*+ am_pm; */
    //out.println("Crrent Time: " + CT + "\n");
 %>
 

@@ -1,4 +1,4 @@
-package meine_servlets;
+package beanServ;
 
 import java.io.IOException;
 import java.io.PrintWriter;
