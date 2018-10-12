@@ -91,7 +91,11 @@ class chart
                 $button = "<button onclick=$func> X </button>";
                 echo "<tr>" . 
                 // "<th>" . $row['prod_id'] ."</th>".
-                "<th>" . $row['prod_name'] . "</th>" . "<th>" . number_format($row['prod_preis'], 2, ',', '.') . "€" . "</th>" . "<th>" . $innerArray[1] . "</th>" . "<th>" . number_format($zwischen, 2, ',', '.') . "€ " . "</th>" . "<th>" . $button . "</th>" . "</tr>";
+                "<th>" . $row['prod_name'] . "</th>" . "<th>" .
+                number_format($row['prod_preis'], 2, ',', '.') . "€" . "</th>" . "<th>" .
+                $innerArray[1] . "</th>" . "<th>" .
+                number_format($zwischen, 2, ',', '.') . "€ " .
+                "</th>" . "<th>" . $button . "</th>" . "</tr>";
             }
             ;
         }

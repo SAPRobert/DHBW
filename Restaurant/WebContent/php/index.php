@@ -27,7 +27,6 @@
 <script src="/dhbw/Restaurant/WebContent/js/loader.js"></script>
 
 
-
 </head>
 
 <body onload="myFunction()" style="margin: 0;">
@@ -71,7 +70,8 @@ include_once 'cookie.php';
                 -155 327 -458 629 -785 784 -280 133 -603 188 -899 155z" />
             </g>
         </svg> <span id="count" class="badge"></span>
-				</a>
+				</a>	
+				
 			</div>
 			<div class="column col-md-8">
 				<h1 class="header">Willkommen im Restaurant "Zum Hirsch"</h1>
@@ -92,9 +92,7 @@ include_once 'cookie.php';
 						onclick="showProducts(this.id)">Nachspeisen</a> <a href="#"
 						class="list-group-item kategorie" id="Getraenk"
 						onclick="showProducts(this.id)">Getränke</a>
-					<!-- <span class="glyphicon glyphicon-chevron-right"></span>-->
 				</div>
-
 			</div>
 			<div class="column col-md-4">
 				<h2 class="heading"><b>Gericht</b></h2>

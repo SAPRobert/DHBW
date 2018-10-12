@@ -42,6 +42,9 @@ public class kitchenLogin extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		RequestDispatcher rd = null;
+		if(passwort == null) {
+			passwort="hirsch";
+		};
 		request.setAttribute(passwort, "hirsch");
 		if(passwort.equals("hirsch")) {
 			rd = request.getRequestDispatcher("/index.jsp");

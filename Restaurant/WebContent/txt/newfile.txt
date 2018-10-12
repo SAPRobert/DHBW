@@ -1,4 +1,0 @@
-Name	Preis	Anzahl	Zwischensumme
-Rostbrätel mit Kartoffelsalat	8,50	1	8,50€ 
-Thüringer Bratwurst mit Brötchen	5,50	1	5,50€ 
-Summe	14,00 €
