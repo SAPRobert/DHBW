@@ -15,14 +15,39 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/Restaurant/js/jQuery.js"></script>
+<style>
+form{
+position:fixed;
+top:20%;
+left:50%;
+margin-left:-16vw;
+margin-top:-20px;
+}
 
+label{
+font-size:25px;
+}
+</style>
 
 </head>
 <body>
-
+<?php
+include_once 'warenkorb.php';
+include_once 'addBestellung.php';
+$chart->undo_Chart();
+?>
+<!-- 
 <form action="../php/index.php" method="get">
-Tischnummer: <input type="text" name="tischnummer"><br>
-<input type="submit">
+Tischnummer: <input class="input-lg" type="text" name="tischnummer"><br>
+<input id="submit" type="submit">
+</form> -->
+
+<form class="form-inline" action="../php/index.php" method="get">
+  <div class="form-group">
+    <label for="pwd">Tischnummer:</label>
+    <input type="text" class="form-control input-lg" id="pwd" name="tischnummer">
+  </div>
+  <button type="submit" class="btn btn-default btn-lg btn-success">Submit</button>
 </form>
 
 </body>

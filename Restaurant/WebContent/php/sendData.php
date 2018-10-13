@@ -33,6 +33,9 @@ for ($i = 0; $i < count($Array); $i ++) {
      
 };
 echo "<h1>" . "Vielen Dank für Ihre Bestellung. Bei Fragen wenden Sie sich gerne an unser Servicepersonal" . "</h1>";
+$link="feedback.html";
+
+echo "<a href=$link>" . "<button id=btn-feedback class=btn>" . "Jetzt Feedback zu Ihrer Bestellung geben" . "</button> </a>";
 $chart->undo_chart();
 $conn->close();
 ?>

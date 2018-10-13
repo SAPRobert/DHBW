@@ -51,7 +51,7 @@ public class kitchenLogin extends HttpServlet {
 			rd.forward(request, response);
 		}
 		else {
-			out.println("<p>Falsches Passwort!</p>");
+			out.println("<label id=falsch>Falsches Passwort!</label>");
 			rd = request.getRequestDispatcher("/kitchenLog.jsp");
 			rd.include(request, response);
 		}
