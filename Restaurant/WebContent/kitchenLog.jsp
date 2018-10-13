@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form method="post" action="kitchenLogin">
+<form autocomplete="off" method="post" action="kitchenLogin">
   Passwort: <input type="text" name="Passwort"><br>
   <input type="submit" value="Login">
 </form>
