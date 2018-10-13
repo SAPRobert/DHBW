@@ -10,7 +10,7 @@
 <body>
 
 <form autocomplete="off" method="post" action="kitchenLogin">
-  Passwort: <input type="text" name="Passwort"><br>
+  Passwort: <input type="password" name="Passwort"><br>
   <input type="submit" value="Login">
 </form>
 

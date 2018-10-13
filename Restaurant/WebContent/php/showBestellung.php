@@ -12,7 +12,9 @@
 include_once 'warenkorb.php';
 include_once 'addBestellung.php';
 
+
 $chart->getChart1();
+
 ?>
 </body>
 </html>
