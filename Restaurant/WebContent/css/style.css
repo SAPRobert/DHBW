@@ -52,6 +52,11 @@ body {
 .kategorie a:hover{
 background-color: rgb(137, 168, 188);
 }
+#copyright{
+	position:fixed;
+	bottom:0px;
+	left:0px;
+}
 
 
 
