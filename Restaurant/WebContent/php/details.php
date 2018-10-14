@@ -5,6 +5,7 @@
 </head>
 
 <body>
+
 <?php
 $servername = 'localhost';
 $username = 'root';
@@ -20,11 +21,8 @@ if (!$con) {
 mysqli_select_db($con,"restaurant");
 $con->set_charset("utf8");
 
-
-
 $sql="SELECT * FROM produkte WHERE prod_id = '".$q."'";
 $result = mysqli_query($con,$sql);
-
 
 while ($row = mysqli_fetch_array($result)) {
     $bild=$row['prod_bild'];
@@ -40,8 +38,8 @@ while ($row = mysqli_fetch_array($result)) {
             "</div>";
 }
 
-
 mysqli_close($con);
 ?>
+
 </body>
 </html>

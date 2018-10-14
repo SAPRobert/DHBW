@@ -52,7 +52,10 @@ class chart
         
         echo "</table>";
     }
-
+    
+    /**
+     * [MODIFIZIERT] Gibt Alle Artikel des Array in einer Tabelle aus.
+     */
     public function getChart1()
     {
         $servername = 'localhost';
@@ -103,24 +106,6 @@ class chart
         echo "<br> . <span>" . "Gesamtsumme: " . number_format($endsumme, 2, ',', '.') . " €" . "</span>";
     }
 
-    public function dbConnect()
-    {
-        $servername = 'localhost';
-        $username = 'root';
-        $password = '';
-        $dbname = 'restaurant';
-        $q = strval($_GET['q']);
-        
-        $con = mysqli_connect($servername, $username, $password, $dbname);
-        if (! $con) {
-            die('Could not connect: ' . mysqli_error($con));
-        }
-        
-        mysqli_select_db($con, "restaurant");
-        $con->set_charset("utf8");
-        
-    }
-
     /**
      * Löscht den Waren Korb
      */
@@ -153,7 +138,13 @@ class chart
         unset($Array[$point]);
         $_SESSION['chart'] = $Array;
     }
-
+        
+    /**
+     *
+     * [MODIFIZIERT] Entfernt ein Artikel am Point n
+     *
+     * @param int $point
+     */
     public function delete_chartValue_at_Point1($point)
     {
         $servername = 'localhost';
@@ -165,21 +156,13 @@ class chart
         if (! $con) {
             die('Could not connect: ' . mysqli_error($con));
         }
-        
         mysqli_select_db($con, "restaurant");
         $con->set_charset("utf8");
         
         
         $Array1 = $_SESSION['chart'];
-        // echo "<br>" . count($_SESSION['chart']);
-        
-        // print_r($Array1);
-        // echo "<br>";
-        
         unset($Array1[$point]);
         $Array = array_values($Array1);
-        
-        // print_r($Array);
         $endsumme = 0.0;
         $zeile = - 1;
         echo "<table width='100%'>";
@@ -189,7 +172,6 @@ class chart
             $innerinnerArray = $innerArray[0];
             $sql = "SELECT * FROM produkte WHERE prod_id = '" . $innerinnerArray . "'";
             $result = mysqli_query($con, $sql);
-            
             while ($row = mysqli_fetch_array($result)) {
                 $zwischen = floatval(floatval($innerArray[1]) * floatval($row['prod_preis']));
                 $endsumme = floatval($endsumme) + floatval($zwischen);
@@ -197,10 +179,13 @@ class chart
                 $func = "deleteProduct($zeile)";
                 $button = "<button onclick=$func> X </button>";
                 echo "<tr>" . 
-                // "<th>" . $row['prod_id'] ."</th>".
-                "<th>" . $row['prod_name'] . "</th>" . "<th>" . number_format($row['prod_preis'], 2, ',', '.') . "€" . "</th>" . "<th>" . $innerArray[1] . "</th>" . "<th>" . number_format($zwischen, 2, ',', '.') . "€" . "</th>" . "<th>" . $button . "</th>" . "</tr>";
-            }
-            ;
+                "<th>" . $row['prod_name'] . "</th>" .
+                "<th>" . number_format($row['prod_preis'], 2, ',', '.') . "€" . "</th>" .
+                "<th>" . $innerArray[1] . "</th>" .
+                "<th>" . number_format($zwischen, 2, ',', '.') . "€" . "</th>" .
+                "<th>" . $button . "</th>" .
+                "</tr>";
+            };
         }
         echo "</table>";
         echo "<br> . <span>" . "Gesamtsumme: " . number_format($endsumme, 2, ',', '.') . "€" . "</span>";
