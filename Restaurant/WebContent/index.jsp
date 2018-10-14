@@ -7,7 +7,7 @@
 <html>
 <head>
 <style>
-   table{
+  table{
   background-color: rgba(255,255,255,0.8);
   }
   /*
@@ -37,7 +37,6 @@
 <title>Bestellungen</title>
 <style>
 button{
-
 }
 </style>
 
@@ -46,7 +45,6 @@ button{
 <body>
 
 <% 
-
 //if(login){
 	
   String sDbDrv = "com.mysql.jdbc.Driver";
@@ -56,7 +54,7 @@ button{
   String sTable = "bestellungen";
   String sSql   = "SELECT bestellungen.prod_ID, bestellungen.b_id, produkte.prod_name, bestellungen.b_anz, bestellungen.b_tisch, bestellungen.b_time FROM bestellungen LEFT JOIN produkte ON bestellungen.prod_ID=produkte.prod_ID WHERE b_erl = 0";
   
-  //response.setIntHeader("Refresh",5);
+  response.setIntHeader("Refresh",5);
   
 %>
 
@@ -110,7 +108,6 @@ button{
     }
   }
 //}
-
   
   
 %>
