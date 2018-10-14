@@ -6,38 +6,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="http://localhost/dhbw/Restaurant/webcontent/css/style.css">
-<title>Bestellungen</title>
 <style>
-<<<<<<< HEAD
   table{
-  border: 1px solid grey;
-  text-align: left;
-  background-color: rgba(223, 219, 194,0.85);
-  }
-  tr {
-=======
-   table{
   background-color: rgba(255,255,255,0.8);
->>>>>>> master
   }
   /*
   #big th {
-  width: 3;
+  width: 300px;
   }
   #small th {
   width: 100px;
-<<<<<<< HEAD
-  }
-  body{
-  overflow: auto;
-  }
-  p {
-  color: white;
-  }
-</style>
-=======
   } */
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -59,17 +37,14 @@
 <title>Bestellungen</title>
 <style>
 button{
-
 }
 </style>
 
->>>>>>> master
 </head>
 
 <body>
 
 <% 
-
 //if(login){
 	
   String sDbDrv = "com.mysql.jdbc.Driver";
@@ -79,7 +54,7 @@ button{
   String sTable = "bestellungen";
   String sSql   = "SELECT bestellungen.prod_ID, bestellungen.b_id, produkte.prod_name, bestellungen.b_anz, bestellungen.b_tisch, bestellungen.b_time FROM bestellungen LEFT JOIN produkte ON bestellungen.prod_ID=produkte.prod_ID WHERE b_erl = 0";
   
-  //response.setIntHeader("Refresh",5);
+  response.setIntHeader("Refresh",5);
   
 %>
 
@@ -102,23 +77,15 @@ button{
       int n = rsmd.getColumnCount();
       out.println( "<label>" + meinBean.meineFunktion() + "</label>"); 
       %>
-<<<<<<< HEAD
-      <th id="small">Bestellungs-ID</th>
-=======
       <table class="table table-striped">
       <thead>
       <th id="big">Bestellnummer</th>
->>>>>>> master
       <th id="big">Produkt</th>
 	  <th id="small">Anzahl</th>
 	  <th id="small">Tisch</th>
 	  <th id="big">Bestellungseingang</th>
-<<<<<<< HEAD
-	  <th id="big">Abschluss</th>
-=======
 	  <th>Abschluss</th>
 	  </thead>
->>>>>>> master
 	  <%
       /* for( int i=2; i<=n; i++ )
         out.println( "<th>" + rsmd.getColumnName( i ) + "</th>" ); */
@@ -128,13 +95,9 @@ button{
         
         for( int i=2; i<=n; i++ ) 
           out.println( "<td>" + rs.getString( i ) + "</td>" );
-<<<<<<< HEAD
-          out.println("<td><button id=" + rs.getString (2) + ">Erledigt</button></td>");
-=======
           String bid=rs.getString(2);
           out.println("<td><button id=" + rs.getString (2) + " onclick=setErledigt(this.id)>Erledigt</button></td>"); 
          
->>>>>>> master
       }
       
 	  out.println("</tr></table>");
@@ -145,12 +108,7 @@ button{
     }
   }
 //}
-
-<<<<<<< HEAD
-  out.print( "<p>Es ist: " + meinBean.meineFunktion() + "</p>"); 
-=======
   
->>>>>>> master
   
 %>
 
