@@ -33,7 +33,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- <link rel="stylesheet" type="text/css" href="http://localhost/dhbw/Restaurant/webcontent/css/style.css">
  --><script src="http://localhost/dhbw/Restaurant/webcontent/js/kueche.js"></script>
-
+<link rel="icon" href="http://localhost/dhbw/Restaurant/webcontent/pictures/favicon.ico" type="image/ico">
 <title>Bestellungen</title>
 <style>
 button{

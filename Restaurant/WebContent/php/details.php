@@ -27,14 +27,17 @@ $result = mysqli_query($con,$sql);
 while ($row = mysqli_fetch_array($result)) {
     $bild=$row['prod_bild'];
     $id=$row['prod_id'];
-    $divid="anzeige";
-    echo    "<div id=$divid>".
+    $divid1="anzeige";
+    $divid2="text";
+    echo    "<div id=$divid1>".
             "<li id=$id >" .
             "<img src=$bild >" . "<br>" .
+            "<div id=$divid2>".
             "<b>" . $row['prod_name'] . "</b>" . "<br>" .
             $row['prod_details'] . "<br>" .
             "<span>" . "Preis: " . number_format($row['prod_preis'], 2, ',', '.') . "€" . "</span>" . 
             "</li>".
+            "</div>".
             "</div>";
 }
 

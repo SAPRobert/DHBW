@@ -17,6 +17,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="http://localhost/dhbw/Restaurant/webcontent/css/style.css">
+<link rel="icon" href="http://localhost/dhbw/Restaurant/webcontent/pictures/favicon.ico" type="image/ico">
 <title>Bitte Passwort eingeben!</title>
 
 <style>
@@ -30,6 +31,8 @@ margin-top:-20px;
 
 label{
 font-size:30px;
+position:relative;
+top:3px;
 }
 #falsch{
 position:fixed;

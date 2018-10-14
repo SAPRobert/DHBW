@@ -16,6 +16,8 @@
 <script src="/dhbw/Restaurant/WebContent/js/jQuery.js"></script>
 <script src="/dhbw/Restaurant/WebContent/js/loader.js"></script>
 
+<link rel="icon" href="../pictures/favicon.ico" type="image/ico">
+
 </head>
 
 <body onload="myFunction()" style="margin: 0;">
@@ -54,7 +56,10 @@ include_once 'grafikServerSide.php';
                 		</g>
         			</svg> 
         			<span id="count" class="badge"></span>
-				</a>	
+				</a>
+				<canvas id="myCanvas" width="70" height="70">
+                    Your browser does not support the HTML5 canvas tag.
+                </canvas>
 			</div>
 			<div class="column col-md-8">
 				<h1 class="header">Willkommen im Restaurant "Zum Hirsch"</h1>
@@ -77,6 +82,8 @@ include_once 'grafikServerSide.php';
     				printImage();
     				?>
 				</div>
+				<img style="display: none; " id="scream" width="50" height="50"
+					src="../pictures/logo_hirsch1.png" alt="Hirsch">
 			</div>
 			<!-- mittlere Spalte -->
 			<div class="column col-md-4">

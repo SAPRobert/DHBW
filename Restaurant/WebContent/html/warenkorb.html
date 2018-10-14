@@ -10,10 +10,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Bilbo Swash Caps' rel='stylesheet'>
-
+<link rel="icon" href="../pictures/favicon.ico" type="image/ico">
 <link rel="stylesheet" type="text/css" href="/dhbw/Restaurant/WebContent/css/style.css">
 <link rel="stylesheet" type="text/css" href="/dhbw/Restaurant/WebContent/css/loader.css">
-<script src="/dhbw/Restaurant/WebContent/js/jQuery.js"></script>
+<script src="/dhbw/Restaurant/WebContent/js/Warenkorb.js"></script>
 <script src="/dhbw/Restaurant/WebContent/js/loader.js"></script>
 <script>
 function back(){
@@ -24,6 +24,7 @@ function back(){
 </head>
 
 <body>
+<div class="row">
 	<div class="col-md-2"></div>
 	<div class="col-md-8" id="">
 		<div class="" id="rechnung"></div>
@@ -36,14 +37,15 @@ function back(){
 		<button id="b_delete" onclick="deleteBasket()" type="button" class="btn btn-success">
 		Warenkorb löschen
 		</button>
-		<a id="b_rechnung" href="../tcpdf/rechnung.php" target="_blank">
-		<button type="button" class="btn btn-success">
+		<a href="../tcpdf/rechnung.php" target="_blank">
+		<button id="b_rechnung"  type="button" class="btn btn-success">
 		Rechnung speichern
 		</button>
 		</a>
 		<button id="b_bestätigen" onclick="sendData()" type="button" class="btn btn-success">
 		Bestellung bestätigen
 		</button>
+	</div>
 	</div>
 </body>
 </html>
