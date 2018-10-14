@@ -156,10 +156,10 @@ $geschmack = $bedienung = $ambiente = $toiletten = $system = $kommentar = "";
           </tr>
         </table>
     
-        <table> <!--neuer table aufgrund von td grˆﬂenunterschieden -->
+        <table> <!--neuer table aufgrund von td grÔøΩÔøΩenunterschieden -->
           <tr>
-            <td class="check" width="45%">Sonstige Anmerkungen/ Verbesserungsvorschl√§ge</td>
-            <td class="check" width="55%">
+            <td class="check" width="45%">Sonstige Anmerkungen/Verbesserungsvorschl√§ge</td>
+            <td style=" padding-left:3vw;" class="check" width="55%">
             	<textarea name="kommentar" class="form-control" rows="5" id="comment"><?php echo $kommentar;?></textarea>
            
             </td>
