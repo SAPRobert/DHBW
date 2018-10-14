@@ -75,7 +75,8 @@ canvas{
  /* 	border-radius: 8px;
  */}
 .kategorie :hover{
-background-color: #e9f3f7cc
+background-color: #e9f3f7cc;
+background-color:rgb(245,245,245);
 }
 #copyright{
 	position:fixed;
