@@ -29,13 +29,12 @@ $lieferdatum = date("d.m.Y");
 $pdfAuthor = "PHP-Einfach.de";
 
 $rechnungs_header = '
-<img width="100px" src="logo.png">
-Rouladenkönigin
-Gerald aus Samoa
-www.roulandenkönigin.de';
+<img width="100px" src="logo_hirsch.png">
+Restaurant "Zum Hirsch"
+www.restaurant-zum-hirsch.de';
 
 $rechnungs_empfaenger = 'Marius Hommann
-Zum Goldenem Löwen 17
+Geraer Straße 37
 27492 Lutherstadt Eisleben';
 
 // $rechnungs_footer = "Wir bitten um eine Begleichung der Rechnung innerhalb von 14 Tagen nach Erhalt. Bitte Überweisen Sie den vollständigen Betrag an:
