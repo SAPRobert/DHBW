@@ -39,7 +39,7 @@ $chart->undo_Chart();
 <form class="form-inline" action="../php/index.php" method="get">
   <div class="form-group">
     <label for="pwd">Tischnummer:</label>
-    <input type="text" class="form-control input-lg" id="pwd" name="tischnummer">
+    <input type="number" class="form-control input-lg" id="pwd" name="tischnummer">
   </div>
   <button type="submit" class="btn btn-default btn-lg btn-success">Submit</button>
 </form>
