@@ -74,8 +74,8 @@ canvas{
     
  /* 	border-radius: 8px;
  */}
-.kategorie a:hover{
-background-color: rgb(137, 168, 188);
+.kategorie :hover{
+background-color: #e9f3f7cc
 }
 #copyright{
 	position:fixed;
@@ -111,7 +111,7 @@ background-color: rgb(137, 168, 188);
     transition: display 2s;
 }
 .column-middle li:hover{
-	background-color: rgb(137, 168, 188);
+	background-color: #eaf4f9
 }
  .column-middle li .scroll{
 	position: absolute;
@@ -160,9 +160,10 @@ background-color: rgb(137, 168, 188);
 }
 .btn-success, #btn-feedback{
 	background-color:rgb(223, 219, 194);
-	height:46px;
+	height:44px;
 	color:black;
 	font-size:large;
+	border-style:none;
 }
 #b_add{
 	position: relative;
@@ -175,6 +176,9 @@ background-color: rgb(137, 168, 188);
 	background-color:rgb(137, 168, 188);
 }
 .btn-success:active{
+	background-color:rgb(137, 168, 188);
+}
+.btn-success:success{
 	background-color:rgb(137, 168, 188);
 }
 
