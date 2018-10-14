@@ -15,14 +15,6 @@ if ($conn->connect_error) {
 }
     $sql = "UPDATE bestellungen SET b_erl = 1 WHERE  b_id = $b_id";
     $conn->query($sql);
-//     if ($conn->query($sql) === TRUE) {
-//         echo "New record created successfully";
-//     } else {
-//         echo "Error: " . $sql . "<br>" . $conn->error;
-//     }
-    
- 
-
 
 $conn->close();
 ?>
