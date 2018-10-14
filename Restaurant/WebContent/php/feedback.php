@@ -156,7 +156,7 @@ $geschmack = $bedienung = $ambiente = $toiletten = $system = $kommentar = "";
           </tr>
         </table>
     
-        <table >
+        <table> <!--neuer table aufgrund von td grˆﬂenunterschieden -->
           <tr>
             <td class="check" width="45%">Sonstige Anmerkungen/ Verbesserungsvorschl√§ge</td>
             <td class="check" width="55%">
