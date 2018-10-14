@@ -45,14 +45,14 @@ public class kitchenLogin extends HttpServlet {
 		if(passwort == null) {
 			passwort="hirsch";
 		};
-		request.setAttribute(passwort, "hirsch");
-		if(passwort.equals("hirsch")) {
-			rd = request.getRequestDispatcher("/index.jsp");
+		request.setAttribute(passwort, "hirsch"); 
+		if(passwort.equals("hirsch")) { //Prüfung Passwort = hirsch
+			rd = request.getRequestDispatcher("/index.jsp"); //Weiterleitung zu index.jsp wenn korrekt
 			rd.forward(request, response);
 		}
 		else {
-			out.println("<label id=falsch>Falsches Passwort!</label>");
-			rd = request.getRequestDispatcher("/kitchenLog.jsp");
+			out.println("<label id=falsch>Falsches Passwort!</label>"); //Ausgabe falsches Passwort
+			rd = request.getRequestDispatcher("/kitchenLog.jsp"); //Reload kitchenLog.jsp
 			rd.include(request, response);
 		}
 		out.close();

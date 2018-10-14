@@ -35,10 +35,6 @@
  --><script src="http://localhost/dhbw/Restaurant/webcontent/js/kueche.js"></script>
 <link rel="icon" href="http://localhost/dhbw/Restaurant/webcontent/pictures/favicon.ico" type="image/ico">
 <title>Bestellungen</title>
-<style>
-button{
-}
-</style>
 
 </head>
 
@@ -52,9 +48,9 @@ button{
   String sUsr   = "root";
   String sPwd   = "";
   String sTable = "bestellungen";
-  String sSql   = "SELECT bestellungen.prod_ID, bestellungen.b_id, produkte.prod_name, bestellungen.b_anz, bestellungen.b_tisch, bestellungen.b_time FROM bestellungen LEFT JOIN produkte ON bestellungen.prod_ID=produkte.prod_ID WHERE b_erl = 0";
+  String sSql   = "SELECT bestellungen.b_id, produkte.prod_name, bestellungen.b_anz, bestellungen.b_tisch, bestellungen.b_time FROM bestellungen LEFT JOIN produkte ON bestellungen.prod_ID=produkte.prod_ID WHERE b_erl = 0";
   
-  response.setIntHeader("Refresh",5);
+  response.setIntHeader("Refresh",5); //Seite nach 5 Sek. neu laden
   
 %>
 
@@ -70,33 +66,31 @@ button{
     
     try {
       Class.forName( sDbDrv );
-      cn = DriverManager.getConnection( sDbUrl, sUsr, sPwd );
+      cn = DriverManager.getConnection( sDbUrl, sUsr, sPwd ); //erzeugt Verbindung zu DB
       st = cn.createStatement();
       rs = st.executeQuery( sSql );
       ResultSetMetaData rsmd = rs.getMetaData();
       int n = rsmd.getColumnCount();
-      out.println( "<label>" + meinBean.meineFunktion() + "</label>"); 
+      out.println( "<label>" + meinBean.meineFunktion() + "</label>"); //Aufruf Java Bean Funktion
       %>
       <table class="table table-striped">
       <thead>
-      <th id="big">Bestellnummer</th>
-      <th id="big">Produkt</th>
-	  <th id="small">Anzahl</th>
-	  <th id="small">Tisch</th>
-	  <th id="big">Bestellungseingang</th>
+      <th>Bestellnummer</th>
+      <th>Produkt</th>
+	  <th>Anzahl</th>
+	  <th>Tisch</th>
+	  <th>Bestellungseingang</th>
 	  <th>Abschluss</th>
 	  </thead>
 	  <%
-      /* for( int i=2; i<=n; i++ )
-        out.println( "<th>" + rsmd.getColumnName( i ) + "</th>" ); */
+
       while( rs.next() )
       {
         out.println( "</tr><tr>" );
         
-        for( int i=2; i<=n; i++ ) 
-          out.println( "<td>" + rs.getString( i ) + "</td>" );
-          String bid=rs.getString(2);
-          out.println("<td><button id=" + rs.getString (2) + " onclick=setErledigt(this.id)>Erledigt</button></td>"); 
+        for( int i=1; i<=n; i++ ) 
+          out.println( "<td>" + rs.getString( i ) + "</td>" ); //Ausgabe der DB-Werte der einzelnen Spalten
+          out.println("<td><button id=" + rs.getString (1) + " onclick=setErledigt(this.id)>Erledigt</button></td>"); //Einfügen Button
          
       }
       
