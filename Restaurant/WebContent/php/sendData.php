@@ -20,10 +20,7 @@ for ($i = 0; $i < count($Array); $i ++) {
     $innerArray=$Array[$i];
     $prod_id=$innerArray[0];
     $b_anz=$innerArray[1];
-   
-    
-    $sql = "INSERT INTO bestellungen (prod_id, b_anz, b_tisch) 
-            VALUES ($prod_id, $b_anz, $b_tisch)";
+    $sql = "INSERT INTO bestellungen (prod_id, b_anz, b_tisch) VALUES ($prod_id, $b_anz, $b_tisch)";
     
     if ($conn->query($sql) === TRUE) {
         //echo "New record created successfully";
@@ -32,6 +29,7 @@ for ($i = 0; $i < count($Array); $i ++) {
     }
      
 };
+
 echo "<h1>" . "Vielen Dank für Ihre Bestellung. Bei Fragen wenden Sie sich gerne an unser Servicepersonal" . "</h1>";
 $link="feedback.html";
 

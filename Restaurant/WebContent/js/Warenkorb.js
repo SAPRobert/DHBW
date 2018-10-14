@@ -1,6 +1,5 @@
 $(document).ready(function() {
 		showBasket("00");
-		
 	});
 
 
@@ -25,17 +24,12 @@ function showBasket(str){
 	        xmlhttp.open("GET","../php/showBestellung.php?q="+str,true);
 	        xmlhttp.send();
 	    }
-	   
-	//alert(detailElementId + "mal" + detailElementMenge);
 };
 
 
 function deleteBasket(str){
 	        xmlhttp.open("GET","../php/deleteBestellung.php?q="+str,true);
 	        xmlhttp.send();
-	   
-	   
-	//alert(detailElementId + "mal" + detailElementMenge);
 };
 
 function deleteProduct(str){

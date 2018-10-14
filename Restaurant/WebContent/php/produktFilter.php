@@ -25,9 +25,6 @@ if (!$con) {
 mysqli_select_db($con,"restaurant");
 $con->set_charset("utf8");
 
-
-
-
 if($q=="Alles"){
     $sql="SELECT * FROM produkte";
 }
@@ -49,7 +46,6 @@ while ($row = mysqli_fetch_array($result)) {
            "</span>" .
            "</li>";
 }
-
 
 mysqli_close($con);
 ?>

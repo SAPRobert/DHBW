@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -7,37 +5,27 @@
 <title>Restaurant "Zum Hirsch"</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="stylesheet" type="text/css"
-	href="/dhbw/Restaurant/WebContent/css/style.css">
-<link rel="stylesheet" type="text/css"
-	href="/dhbw/Restaurant/WebContent/css/loader.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Bilbo Swash Caps' rel='stylesheet'>
 
+<link rel="stylesheet" type="text/css" href="/dhbw/Restaurant/WebContent/css/style.css">
+<link rel="stylesheet" type="text/css" href="/dhbw/Restaurant/WebContent/css/loader.css">
 <script src="/dhbw/Restaurant/WebContent/js/jQuery.js"></script>
 <script src="/dhbw/Restaurant/WebContent/js/loader.js"></script>
-
 
 </head>
 
 <body onload="myFunction()" style="margin: 0;">
+
 <?php
 include_once 'cookie.php';
 include_once 'grafikServerSide.php';
 ?>
 
 <div id="loader"></div>
-
-
 	<div style="display: none;" id="myDiv" class="animate-bottom">
 		<div id="oben" class="row">
 			<div id="Warenkorb" class="column col-md-2">
@@ -67,48 +55,41 @@ include_once 'grafikServerSide.php';
         			</svg> 
         			<span id="count" class="badge"></span>
 				</a>	
-				
 			</div>
 			<div class="column col-md-8">
 				<h1 class="header">Willkommen im Restaurant "Zum Hirsch"</h1>
 			</div>
-			
- 			
-<!--  		<canvas class="column col-md-4" id="myCanvas" width="100px" height="100px" style="border:1px solid #d3d3d3;">
-            Your browser does not support the canvas element.
-            </canvas>-->
 		</div>
 		<div class="container-fluid">
 		<div class="row">
+		    <!-- linke Spalte -->
 			<div class="column column-left col-md-4">
 				<h2 class="heading"><b>Kategorie</b></h2>
 				<div class="list-group Kat">
-					<a href="#" class="list-group-item kategorie" id="Alles"
-						onclick="showProducts(this.id)">Gesamtes Angebot</a> <a href="#"
-						class="list-group-item kategorie" id="Vorspeise"
-						onclick="showProducts(this.id)">Vorspeise</a> <a href="#"
-						class="list-group-item kategorie" id="Hauptspeise"
-						onclick="showProducts(this.id)">Hauptspeisen</a> <a href="#"
-						class="list-group-item kategorie" id="Nachspeise"
-						onclick="showProducts(this.id)">Nachspeisen</a> <a href="#"
-						class="list-group-item kategorie" id="Getraenk"
-						onclick="showProducts(this.id)">Getränke</a>
+					<a href="#" class="list-group-item kategorie" id="Alles" onclick="showProducts(this.id)">Gesamtes Angebot</a> 
+					<a href="#" class="list-group-item kategorie" id="Vorspeise" onclick="showProducts(this.id)">Vorspeise</a> 
+					<a href="#" class="list-group-item kategorie" id="Hauptspeise" onclick="showProducts(this.id)">Hauptspeisen</a> 
+					<a href="#" class="list-group-item kategorie" id="Nachspeise" onclick="showProducts(this.id)">Nachspeisen</a> 
+					<a href="#" class="list-group-item kategorie" id="Getraenk" onclick="showProducts(this.id)">Getränke</a>
 				</div>
 				<div id="copyright">
-				<?php 
-				printImage();
-				?>
+    				<?php 
+    				printImage();
+    				?>
 				</div>
 			</div>
+			<!-- mittlere Spalte -->
 			<div class="column col-md-4">
 				<h2 class="heading"><b>Gericht</b></h2>
 				<div class="column col-md-12 column-middle">
-						<div class="produkte" id="produkte"></div>
+					<div class="produkte" id="produkte"></div>
 				</div>
 			</div>
+			<!-- rechte Spalte -->
 			<div class="column column-right col-md-4">
 				<h2 class="heading"><b>Details</b></h2>
-				<div class="" id="details"></div>
+				<div class="" id="details">
+				</div>
 				<div id="ione">
 					<button type="button" class="btn btn-default btn-sm btn-pm" onclick="plus()">
 						<span class="glyphicon glyphicon-plus"></span> 
@@ -117,25 +98,13 @@ include_once 'grafikServerSide.php';
 						<span class="glyphicon glyphicon-minus"></span> 
 					</button>
 					<input id="input1" type="text" value="1">
-					</div>
-					<button id="b_add" onclick="addToBasket()" type="button"
-						class="btn btn-success">Zur Bestellung hinzufügen</button>
-				
+					<button id="b_add" onclick="addToBasket()" type="button" class="btn btn-success">Zur Bestellung hinzufügen</button>
+				</div>	
 			</div>
 		</div>
 	</div>
 </div>
 
-
-
-<script>
-var canvas = document.getElementById("myCanvas");
-var ctx=canvas.getContext("2d");
-ctx.font="20px Bilbo Swash Caps";
-ctx.fillStyle = "red";
-ctx.textAlign = "center";
-ctx.fillText("Hello World", canvas.width/2, canvas.height/2);
-</script>	<!-- 	<div id="testfenster"></div> -->
 </body>
 
 </html>

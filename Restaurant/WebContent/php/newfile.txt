@@ -1,4 +1,0 @@
-Name	Preis	Anzahl	Zwischensumme
-1 Scheibe Brot	1,50		0,00€ 
-Wasser sprudel 0.5l	2,50		0,00€ 
-Summe	0,00 €

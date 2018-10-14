@@ -6,7 +6,6 @@
 
 <body>
 
-
 <?php
 include_once 'addBestellung.php';
 include_once 'Warenkorb.php';
@@ -20,5 +19,6 @@ else{
     $chart->getChart1(); 
 };
 ?>
+
 </body>
 </html>
